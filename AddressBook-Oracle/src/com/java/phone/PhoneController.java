@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Scanner;
 
 public class PhoneController {
+	static Scanner s = new Scanner(System.in);
+	
 	public static void listPhoneBook() {
 		PhoneDao pDao = new PhoneRepository();
 		List<PhoneVo> list = pDao.getList();
@@ -13,18 +15,19 @@ public class PhoneController {
 		
 		while(it.hasNext()) {
 			PhoneVo pVo = it.next();
-			System.out.printf("%s, %d, %d%n", pVo.getName(), pVo.getHp(), pVo.getTel());
+			System.out.printf("%d, %s, %s, %s%n", pVo.getId(), pVo.getName(), pVo.getHp(), pVo.getTel());
 		}
 	}
 	
 	public static void insertPhone() {
-		Scanner s = new Scanner(System.in);
+		// Scanner s = new Scanner(System.in);
+		
 		System.out.print("이름 : ");
 		String name = s.next();
 		System.out.print("휴대폰 번호 : ");
-		Long hp = s.nextLong();
+		String hp = s.next();
 		System.out.print("집 번호 : ");
-		Long tel = s.nextLong();
+		String tel = s.next();
 		
 		PhoneVo pVo = new PhoneVo(name, hp, tel);
 		
@@ -32,25 +35,21 @@ public class PhoneController {
 		boolean success = pDao.insert(pVo);
 		
 		System.out.println("PHONE INSERT : " + (success ? "성공" : "실페"));
-		
-		s.close();
 	}
 	
 	public static void deletePhone() {
-		Scanner s = new Scanner(System.in);
-		System.out.print("삭제 이름 입력 : ");
-		String name = s.next();
+		// Scanner s = new Scanner(System.in);
+		System.out.print("삭제 ID 입력 : ");
+		Long id = s.nextLong();
 		
 		PhoneDao pDao = new PhoneRepository();
-		boolean success = pDao.delete(name);
+		boolean success = pDao.delete(id);
 		
 		System.out.println("PHONE DELETE : " + (success ? "성공" : "실패"));
-		
-		s.close();
 	}
 	
 	public static void searchPhone() {
-		Scanner s = new Scanner(System.in);
+		// Scanner s = new Scanner(System.in);
 		System.out.print("검색 이름 입력 : ");
 		String name = s.next();
 		
@@ -63,7 +62,6 @@ public class PhoneController {
 			PhoneVo pVo = it.next();
 			System.out.println(pVo);
 		}
-		s.close();
 	}
 	
 	public void execute() {

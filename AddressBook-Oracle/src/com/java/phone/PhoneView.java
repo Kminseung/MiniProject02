@@ -22,22 +22,25 @@ public class PhoneView {
 				// 리스트
 				System.out.println("<1. 리스트>");
 				PhoneController.listPhoneBook();
-				
+				System.out.println();
 				continue;
 			case 2:
 				// 등록
 				System.out.println("<2. 등록>");
 				PhoneController.insertPhone();
+				System.out.println();
 				continue;
 			case 3:
 				// 삭제
 				System.out.println("<3. 삭제>");
 				PhoneController.deletePhone();
+				System.out.println();
 				continue;
 			case 4:
 				// 검색
 				System.out.println("<4. 검색>");
 				PhoneController.searchPhone();
+				System.out.println();
 				continue;
 			case 5:
 				// 종료
@@ -47,7 +50,7 @@ public class PhoneView {
 				System.out.println("************************************");
 				break;
 			default:
-				System.out.println("[다시 입력해 주세요.]");
+				System.out.println("[다시 입력해 주세요.]\n");
 				continue;
 			}
 		}

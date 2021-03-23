@@ -6,5 +6,4 @@ public class PhoneApp {
 		PhoneController pController = new PhoneController();
 		pController.execute();
 	}
-
 }
