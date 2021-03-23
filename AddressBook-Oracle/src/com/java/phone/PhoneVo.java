@@ -18,10 +18,8 @@ public class PhoneVo {
 	}
 	
 	public PhoneVo(Long id, String name, String hp, String tel) {
+		this(name, hp, tel);
 		this.id = id;
-		this.name = name;
-		this.hp = hp;
-		this.tel = tel;
 	}
 
 	// getter / setter

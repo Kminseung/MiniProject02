@@ -20,8 +20,6 @@ public class PhoneController {
 	}
 	
 	public static void insertPhone() {
-		// Scanner s = new Scanner(System.in);
-		
 		System.out.print("이름 : ");
 		String name = s.next();
 		System.out.print("휴대폰 번호 : ");
@@ -32,24 +30,18 @@ public class PhoneController {
 		PhoneVo pVo = new PhoneVo(name, hp, tel);
 		
 		PhoneDao pDao = new PhoneRepository();
-		boolean success = pDao.insert(pVo);
-		
-		System.out.println("PHONE INSERT : " + (success ? "성공" : "실페"));
+		pDao.insert(pVo);
 	}
 	
 	public static void deletePhone() {
-		// Scanner s = new Scanner(System.in);
 		System.out.print("삭제 ID 입력 : ");
 		Long id = s.nextLong();
 		
 		PhoneDao pDao = new PhoneRepository();
-		boolean success = pDao.delete(id);
-		
-		System.out.println("PHONE DELETE : " + (success ? "성공" : "실패"));
+		pDao.delete(id);
 	}
 	
 	public static void searchPhone() {
-		// Scanner s = new Scanner(System.in);
 		System.out.print("검색 이름 입력 : ");
 		String name = s.next();
 		

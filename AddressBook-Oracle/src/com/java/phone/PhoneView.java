@@ -16,6 +16,7 @@ public class PhoneView {
 			System.out.println("------------------------------------");
 			System.out.print("메뉴번호> ");
 			n = s.nextInt();
+			System.out.println();
 			
 			switch(n) {
 			case 1:
@@ -28,13 +29,13 @@ public class PhoneView {
 				// 등록
 				System.out.println("<2. 등록>");
 				PhoneController.insertPhone();
-				System.out.println();
+				System.out.println("[등록되었습니다.]\n");
 				continue;
 			case 3:
 				// 삭제
 				System.out.println("<3. 삭제>");
 				PhoneController.deletePhone();
-				System.out.println();
+				System.out.println("[삭제되었습니다.]\n");
 				continue;
 			case 4:
 				// 검색
